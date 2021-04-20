@@ -1,4 +1,4 @@
-Boilerplate de aplicação react pura (sem create-react-app), configurada com babel e webpack
+Boilerplate de aplicação Vue pura (sem vue-cli), configurada com babel e webpack/hotreload
 
 npm install or yarn install
 

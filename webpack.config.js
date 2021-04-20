@@ -1,5 +1,7 @@
 const path = require("path");
 // const webpack = require("webpack");
+const { VueLoaderPlugin } = require("vue-loader");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -12,10 +14,14 @@ module.exports = {
     publicPath: "",
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js"],
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: "vue-loader",
+      },
       {
         test: /\.js$/,
         loader: "babel-loader",
@@ -49,5 +55,6 @@ module.exports = {
       filename: "index.html",
       inject: "body",
     }),
+    new VueLoaderPlugin(),
   ],
 };

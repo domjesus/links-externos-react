@@ -1,7 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
+import Vue from "vue";
+import App from "./App.vue";
 
-const App = () => <h1>BoilerPlace React</h1>;
+// Globally register all `_base`-prefixed components
+// import "@components/_globals";
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+// Don't warn about using the dev version of Vue in development.
+Vue.config.productionTip = process.env.NODE_ENV === "production";
+
+const app = new Vue({
+  render: (h) => h(App),
+}).$mount("#root");
